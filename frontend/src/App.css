@@ -94,7 +94,7 @@ body {
   width: 500px;
   height: auto;
   padding: 20px;
-  border: 5px solid dodgerblue;
+  border: 5px solid #d1515a;
   border-radius: 5px;
 }
 
@@ -112,7 +112,7 @@ body {
   margin-top: 15px;
   height: 40px;
   border: none;
-  background-color: lightskyblue;
+  background-color: #122441;
   border-radius: 5px;
   color: white;
 }
