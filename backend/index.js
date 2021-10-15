@@ -5,7 +5,7 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-const db = require("./models"); // Lien vers les models implantés par sequelize
+const db = require("./models");
 
 // Routers
 const postRouter = require("./routes/Posts");
