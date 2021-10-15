@@ -5,9 +5,13 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-const db = require("./models"); // Pour injecter le modèle dans la BD
+const db = require("./models"); // Lien vers les models implantés par sequelize
+
+// Routers
 const postRouter = require("./routes/Posts");
 app.use("/posts", postRouter);
+const commentsRouter = require("./routes/Comments");
+app.use("/comments", commentsRouter);
 
 db.sequelize.sync().then(() => {
   app.listen(3001, () => {
