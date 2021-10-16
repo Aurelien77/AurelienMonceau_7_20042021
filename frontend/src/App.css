@@ -1,9 +1,44 @@
+/* ---------------------------- */
+/* Défilement de droite à gauche */
+.marquee-rtl {
+  overflow: hidden; /* important */
+  width: 50%;
+  max-width: 30em; /* A ADAPTER */
+}
+.marquee-rtl > div {
+  display: inline-block; /* important */
+  white-space: nowrap; /* important */
+  animation: defilement-rtl 35s infinite linear; /* défilement */
+  cursor: pointer;
+  padding: 10px 2em 10px 100%;
+}
+.marquee-rtl:hover > div {
+  animation-play-state: paused; /* met en pause le défilement */
+}
+.marquee-rtl > div:first-letter {
+  font-weight: 700;
+  color: #f00;
+}
+@keyframes defilement-rtl {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(100%);
+    transform: translate(-100%);
+  }
+}
+
 .App {
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-size: cover;
+  background: no-repeat,
+    url("https://avatars.mds.yandex.net/get-pdb/1209663/b075c80e-a715-45e7-a18a-c4fc3d8bcea7/orig");
 }
 
 body {
@@ -23,8 +58,9 @@ body {
   margin-top: 50px;
   border: 1px solid #d1515a;
   font-family: Arial, Helvetica, sans-serif;
-
+  background-color: aliceblue;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
 }
 
 .post:hover {
@@ -89,6 +125,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background: no-repeat;
+
+  /*     url("https://924collective.com/2018/05/24/the-carnival-spectacles/everything-zen/"); */
+
+  /*   url("https://64.media.tumblr.com/504b77b22396ca06b425e6834a2ad702/81904407f068f9c7-19/s1920x1080/0c0b12cdeb348d6c161b44d93f7d44a921b28b11.gif"); */
 }
 .formContainer {
   display: flex;
@@ -98,7 +140,8 @@ body {
   height: auto;
   padding: 20px;
   border: 5px solid #d1515a;
-  border-radius: 5px;
+  border-radius: 25px;
+  background-color: rgb(248, 246, 242);
 }
 
 .formContainer #inputCreatePost {

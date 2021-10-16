@@ -60,6 +60,15 @@ function App() {
                 </>
               )}
             </div>
+
+            <div class="marquee-rtl">
+              <div>
+                Bienvenue <b>sur le réseau social de Groupomania</b> vous avez à
+                votre disposition les posts de vos collègues afin de partager de
+                bons moments, et n'oublier pas, RESTEZ POISITIF !
+              </div>
+            </div>
+
             <div className="loggedInContainer">
               <h1>{authState.username} </h1>
               {authState.status && (

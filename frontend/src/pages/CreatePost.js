@@ -20,8 +20,8 @@ function CreatePost() {
     }
   }, []);
   const validationSchema = Yup.object().shape({
-    title: Yup.string().required("You must input a Title!"),
-    postText: Yup.string().required(),
+    title: Yup.string().required("Vous devez entrer un titre"),
+    postText: Yup.string().required("Vous devez entrer du texte"),
   });
 
   const onSubmit = (data) => {
@@ -59,7 +59,7 @@ function CreatePost() {
             placeholder="(Ex. Post...)"
           />
 
-          <button type="submit"> Create Post</button>
+          <button type="submit"> Créer un Post</button>
         </Form>
       </Formik>
     </div>
