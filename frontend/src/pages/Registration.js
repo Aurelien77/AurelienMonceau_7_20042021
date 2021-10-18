@@ -7,11 +7,13 @@ function Registration() {
   const initialValues = {
     username: "",
     password: "",
+    email: "",
   };
 
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
     password: Yup.string().min(4).max(20).required(),
+    email: Yup.string().min(4).max(30).required(),
   });
 
   const onSubmit = (data) => {
@@ -47,7 +49,16 @@ function Registration() {
             placeholder="Your Password..."
           />
 
-          <button type="submit"> Register</button>
+          <label>email: </label>
+          <ErrorMessage name="email" component="span" />
+          <Field
+            autocomplete="off"
+            id="email"
+            name="email"
+            placeholder="(Ex. John@groupomania.com...)"
+          />
+
+          <button type="submit"> Enregistrer</button>
         </Form>
       </Formik>
     </div>

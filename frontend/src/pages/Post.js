@@ -76,7 +76,7 @@ function Post() {
 
   const editPost = (option) => {
     if (option === "title") {
-      let newTitle = prompt("Enter New Title:");
+      let newTitle = prompt("Entrer un nouveau titre:");
       axios.put(
         "http://localhost:3001/posts/title",
         {
@@ -90,7 +90,7 @@ function Post() {
 
       setPostObject({ ...postObject, title: newTitle });
     } else {
-      let newPostText = prompt("Enter New Text:");
+      let newPostText = prompt("entrer un nouveau texte:");
       axios.put(
         "http://localhost:3001/posts/postText",
         {
@@ -156,7 +156,7 @@ function Post() {
               setNewComment(event.target.value);
             }}
           />
-          <button onClick={addComment}> Add Comment</button>
+          <button onClick={addComment}> Ajouter un commentaire</button>
         </div>
         <div className="listOfComments">
           {comments.map((comment, key) => {
