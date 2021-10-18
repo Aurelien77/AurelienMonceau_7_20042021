@@ -78,8 +78,6 @@ function Home() {
                 history.push(`/post/${value.id}`);
               }}
             >
-              {" "}
-              Salut
               {value.postText}
             </div>
             <div className="footer">
