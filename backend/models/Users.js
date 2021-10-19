@@ -13,9 +13,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
+    admin: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValues: false,
+    },
   });
 
   Users.associate = (models) => {
+    //un user à plusieurs postes et plusieurs likes
     Users.hasMany(models.Likes, {
       onDelete: "cascade",
     });

@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Posts.associate = (models) => {
+    //un poste à plusieurs commentaires et plusieurs likes
     Posts.hasMany(models.Comments, {
       onDelete: "cascade",
     });

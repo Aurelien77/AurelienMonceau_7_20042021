@@ -132,7 +132,9 @@ function Post() {
           </div>
           <div className="footer">
             {postObject.username}
-            {authState.username === postObject.username && (
+
+            {(authState.username === postObject.username ||
+              authState.admin == true) && (
               <button
                 onClick={() => {
                   deletePost(postObject.id);

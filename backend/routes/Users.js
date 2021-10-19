@@ -12,6 +12,7 @@ router.post("/", async (req, res) => {
       username: username,
       password: hash,
       email: email,
+      admin: false,
     });
     res.json("SUCCESS");
   });
@@ -31,7 +32,12 @@ router.post("/login", async (req, res) => {
       { username: user.username, id: user.id },
       "importantsecret"
     );
-    res.json({ token: accessToken, username: username, id: user.id });
+    res.json({
+      token: accessToken,
+      username: username,
+      id: user.id,
+      admin: user.admin,
+    });
   });
 });
 

@@ -34,7 +34,8 @@ function Registration() {
           <ErrorMessage name="username" component="span" />
           <Field
             autocomplete="off"
-            id="inputCreatePost"
+            id="username"
+            className="inputCreatePost"
             name="username"
             placeholder="(Ex. John123...)"
           />
@@ -44,7 +45,8 @@ function Registration() {
           <Field
             autocomplete="off"
             type="password"
-            id="inputCreatePost"
+            id="password"
+            className="inputCreatePost"
             name="password"
             placeholder="Your Password..."
           />
@@ -54,6 +56,7 @@ function Registration() {
           <Field
             autocomplete="off"
             id="email"
+            className="inputCreatePost"
             name="email"
             placeholder="(Ex. John@groupomania.com...)"
           />
