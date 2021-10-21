@@ -141,7 +141,7 @@ function Post() {
                 }}
               >
                 {" "}
-                Delete Post
+                Supprimer le Post
               </button>
             )}
           </div>
@@ -165,6 +165,7 @@ function Post() {
             return (
               <div key={key} className="comment">
                 {comment.commentBody}
+
                 <label> Username: {comment.username}</label>
                 {authState.username === comment.username && (
                   <button
@@ -172,7 +173,7 @@ function Post() {
                       deleteComment(comment.id);
                     }}
                   >
-                    X
+                    Suppprimer X
                   </button>
                 )}
               </div>

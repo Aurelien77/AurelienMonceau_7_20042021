@@ -88,6 +88,7 @@ body {
   flex: 20%;
   border-top: 1px solid #d1515a;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-left: 15px;
   background-color: #122441;
@@ -108,6 +109,7 @@ body {
 
 .likeBttn {
   color: rgba(250, 250, 250, 0.8);
+  border-color: #d1515a;
 }
 .unlikeBttn {
   color: white;
@@ -122,8 +124,8 @@ body {
 
 .createPostPage {
   font-family: Arial, Helvetica, sans-serif;
-  width: 100vw;
-  height: 70vh;
+  width: 100%;
+  height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,31 +138,35 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 500px;
-  height: auto;
+  width: 40%;
+  height: 40%;
   padding: 20px;
   border: 5px solid #d1515a;
   border-radius: 25px;
   background-color: rgb(248, 246, 242);
+  font-size: 35px;
 }
 
-.formContainer .inputCreatePost {
-  height: 40px;
+.formContainer #inputCreatePost {
+  height: 100%;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
   border: 2px solid grey;
   border-radius: 5px;
-  padding-left: 10px;
-  font-size: 20px;
+  font-size: 35px;
 }
 
 .formContainer button {
-  margin-top: 15px;
-  height: 40px;
-  border: none;
+  margin-top: 2%;
+  height: 40%;
+  width: 100%;
+  border-color: #d1515a solid 2px;
   background-color: #122441;
   border-radius: 5px;
   color: white;
+  font-size: 17px;
+  justify-content: center;
 }
 
 .formContainer button:hover {
@@ -175,6 +181,7 @@ span {
 /* NAVBAR */
 
 .navbar {
+  font-size: 25px;
   width: 100%;
   height: 70px;
   background-color: #d1515a;
@@ -215,8 +222,9 @@ a {
 .navbar h1 {
   text-align: right;
   margin-right: 10px;
-  color: white;
+  color: rgb(12, 12, 12);
   font-weight: lighter;
+  /*  background-color: rgb(80, 4, 221); */
 }
 
 /*POST INDIVIDUEL  */
@@ -299,7 +307,7 @@ button {
 }
 
 #individual .body {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 /* LOGIN */

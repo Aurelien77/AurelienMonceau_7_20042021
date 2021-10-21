@@ -24,7 +24,7 @@ function Profile() {
     <div className="profilePageContainer">
       <div className="basicInfo">
         {" "}
-        <h1> Username: {username} </h1>
+        <h1> Page de profil de : {username} </h1>
         {authState.username === username && (
           <button
             onClick={() => {
@@ -32,7 +32,7 @@ function Profile() {
             }}
           >
             {" "}
-            Change My Password
+            Changer mon mots de passe
           </button>
         )}
       </div>
