@@ -166,7 +166,7 @@ function Post() {
               <div key={key} className="comment">
                 {comment.commentBody}
 
-                <label> Username: {comment.username}</label>
+                <label> Posté par {comment.username}</label>
                 {authState.username === comment.username && (
                   <button
                     onClick={() => {

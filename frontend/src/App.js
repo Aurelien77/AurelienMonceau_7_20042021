@@ -55,7 +55,8 @@ function App() {
           <div className="navbar">
             <div className="links">
               <Link to="/"> Page d'accueil</Link>
-              <Link to="/createpost"> Créer un Post</Link>
+              <Link to="/createpost"> créer un Post</Link>
+
               {!authState.status && (
                 <>
                   <Link to="/login"> Se connecter</Link>

@@ -41,7 +41,7 @@ function CreatePost() {
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="formContainer">
+        <Form className="formContainer2">
           <label>Title: </label>
           <ErrorMessage name="title" component="span" />
           <Field
