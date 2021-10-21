@@ -1,7 +1,6 @@
 const { sign } = require("jsonwebtoken");
 const { Users } = require("../models");
 const bcrypt = require("bcrypt");
-const { validateToken } = require("../middlewares/AuthMiddleware");
 
 exports.login = async (req, res) => {
   const { username, password } = req.body;

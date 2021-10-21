@@ -1,59 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const { Posts, Likes } = require("../models");
 
 const { validateToken } = require("../middlewares/AuthMiddleware");
+const postsCtrl = require("../controllers/posts");
 
-router.get("/", validateToken, async (req, res) => {
-  const listOfPosts = await Posts.findAll({ include: [Likes] });
-  const likedPosts = await Likes.findAll({ where: { UserId: req.user.id } });
-  res.json({ listOfPosts: listOfPosts, likedPosts: likedPosts });
-});
+router.get("/", validateToken, postsCtrl.posts);
 
-router.get("/byId/:id", async (req, res) => {
-  const id = req.params.id;
-  const post = await Posts.findByPk(id);
-  res.json(post);
-});
+router.post("/", validateToken, postsCtrl.post);
 
-router.get("/byuserId/:id", async (req, res) => {
-  const id = req.params.id;
-  const listOfPosts = await Posts.findAll({
-    where: { UserId: id },
-    include: [Likes],
-  });
-  res.json(listOfPosts);
-});
+router.get("/byId/:id", postsCtrl.id);
 
-router.post("/", validateToken, async (req, res) => {
-  const post = req.body;
-  post.username = req.user.username;
-  post.UserId = req.user.id;
-  await Posts.create(post);
-  res.json(post);
-});
+router.get("/byId/:id", postsCtrl.userid);
 
-router.put("/title", validateToken, async (req, res) => {
-  const { newTitle, id } = req.body;
-  await Posts.update({ title: newTitle }, { where: { id: id } });
-  res.json(newTitle);
-});
+router.put("/title", validateToken, postsCtrl.title);
 
-router.put("/postText", validateToken, async (req, res) => {
-  const { newText, id } = req.body;
-  await Posts.update({ postText: newText }, { where: { id: id } });
-  res.json(newText);
-});
+router.put("/postText", validateToken, postsCtrl.posttext);
 
-router.delete("/:postId", validateToken, async (req, res) => {
-  const postId = req.params.postId;
-  await Posts.destroy({
-    where: {
-      id: postId,
-    },
-  });
-
-  res.json("DELETED SUCCESSFULLY");
-});
+router.delete("/:postId", validateToken, postsCtrl.postId);
 
 module.exports = router;

@@ -3,30 +3,12 @@ const router = express.Router();
 const { Comments } = require("../models");
 const { validateToken } = require("../middlewares/AuthMiddleware");
 
-router.get("/:postId", async (req, res) => {
-  const postId = req.params.postId;
-  const comments = await Comments.findAll({ where: { PostId: postId } });
-  res.json(comments);
-});
+const CommentCtrl = require("../controllers/comments");
 
-router.post("/", validateToken, async (req, res) => {
-  const comment = req.body;
-  const username = req.user.username;
-  comment.username = username;
-  await Comments.create(comment);
-  res.json(comment);
-});
+router.get("/:postId", CommentCtrl.postId);
 
-router.delete("/:commentId", validateToken, async (req, res) => {
-  const commentId = req.params.commentId;
+router.post("/", validateToken, CommentCtrl.postid);
 
-  await Comments.destroy({
-    where: {
-      id: commentId,
-    },
-  });
-
-  res.json("DELETED SUCCESSFULLY");
-});
+router.delete("/:commentId", validateToken, CommentCtrl.commentId);
 
 module.exports = router;
