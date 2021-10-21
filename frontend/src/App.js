@@ -1,5 +1,8 @@
 import "./App.css";
+
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
+//components
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";

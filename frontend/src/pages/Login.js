@@ -21,7 +21,7 @@ function Login() {
           username: response.data.username,
           id: response.data.id,
           status: true,
-          admin: response.data.admin, //tous ce qui est dans réponse concernant admijn
+          admin: response.data.admin, //tous ce qui est dans réponse concernant admin
         });
         history.push("/");
       }

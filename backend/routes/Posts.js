@@ -10,7 +10,7 @@ router.post("/", validateToken, postsCtrl.post);
 
 router.get("/byId/:id", postsCtrl.id);
 
-router.get("/byId/:id", postsCtrl.userid);
+router.get("/byuserId/:id", postsCtrl.userid);
 
 router.put("/title", validateToken, postsCtrl.title);
 
