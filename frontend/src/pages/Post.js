@@ -107,8 +107,8 @@ function Post() {
   };
 
   return (
-    <div className="postPage">
-      <div className="leftSide">
+    <div className="leftSide">
+      <div className="postPage">
         <div className="post" id="individual">
           <div
             className="title"
