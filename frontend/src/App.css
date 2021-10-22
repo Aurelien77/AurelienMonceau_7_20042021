@@ -301,7 +301,9 @@ a {
   display: flex;
   flex-direction: column;
   place-items: center;
-  background-size: cover;
+  /* background-size: cover; */
+  width: 45%;
+  background: repeat, url(./logos/orig.gif);
 }
 
 .rightSide {
