@@ -80,6 +80,9 @@ function Home() {
             >
               {value.postText}
             </div>
+            <Link className="lien" target="_blank" to={value.lien}>
+              {value.lien}
+            </Link>
             <div className="footer">
               <div className="username">
                 <Link to={`/profile/${value.UserId}`}> {value.username} </Link>

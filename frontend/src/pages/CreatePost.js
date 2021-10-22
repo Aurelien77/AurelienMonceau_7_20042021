@@ -12,6 +12,7 @@ function CreatePost() {
   const initialValues = {
     title: "",
     postText: "",
+    lien: "",
   };
 
   useEffect(() => {
@@ -22,6 +23,7 @@ function CreatePost() {
   const validationSchema = Yup.object().shape({
     title: Yup.string().required("Vous devez entrer un titre"),
     postText: Yup.string().required("Vous devez entrer du texte"),
+    lien: Yup.string().required("Vous pouvez poster sans insérer de lien"),
   });
 
   const onSubmit = (data) => {
@@ -57,6 +59,15 @@ function CreatePost() {
             id="inputCreatePost"
             name="postText"
             placeholder="(Ex. Post...)"
+          />
+
+          <label>Noter ici votre lien: </label>
+          <ErrorMessage name="lien" component="span" />
+          <Field
+            autocomplete="off"
+            id="lien"
+            name="lien"
+            placeholder="(Ex. htpp://monlien.com...)"
           />
 
           <button type="submit"> Créer un Post</button>

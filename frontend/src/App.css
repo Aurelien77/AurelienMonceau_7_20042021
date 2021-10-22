@@ -1,4 +1,13 @@
 /* ---------------------------- */
+
+.logo {
+  height: 10%;
+  width: 100%;
+  margin-top: 100%;
+}
+.lien {
+  color: black;
+}
 /* Défilement de droite à gauche */
 .marquee-rtl {
   overflow: hidden; /* important */
@@ -31,16 +40,39 @@
     transform: translate(-100%);
   }
 }
+.flex {
+  display: flex;
+  width: 100%;
+  align-content: center;
 
+  justify-content: center;
+}
+.fond {
+  margin-top: -85px;
+  margin-bottom: 10px;
+  width: 30%;
+  height: 50%;
+}
+
+.boutlog {
+  margin-top: 30%;
+  margin-bottom: 30%;
+}
 .App {
   width: 100%;
-  height: auto;
+  height: 1000px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  /*  background-size: cover; */
+  /*  background-size: cover;
+  background-image: url(./logos/ville.jpg);
+  background-position: center bottom, left top;
+  background-repeat: no-repeat; */
 
-  background: repeat, url(./logos/icon.svg);
+  background-image: url(./logos/icon.svg);
+  background-position: center bottom;
+  background-size: 40%;
+  background-repeat: repeat;
 }
 
 body {
@@ -204,13 +236,16 @@ span {
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   background-size: cover;
-  background: no-repeat, url(./logos/orig.gif);
+  /* background: no-repeat, url(./logos/orig.gif); */
+  background-color: rgb(181, 151, 209);
+  color: black;
 }
 .navbar .links {
   flex: 50%;
   height: 100%;
   display: flex;
   align-items: center;
+  color: black;
 }
 
 .navbar .loggedInContainer {
@@ -219,11 +254,12 @@ span {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  color: black;
 }
 a {
   margin-left: 20px;
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .navbar button {
@@ -338,18 +374,26 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 100vh;
+  width: 40%;
+  height: 60%;
   padding-top: 100px;
+  border-radius: 80px;
+  margin-top: 50px;
+  background-size: cover;
+  background: no-repeat, url(./logos/orig.gif);
+  box-shadow: 1px 1px silver, -0.5em 0 0.4em black;
+
+  font-size: 150%;
 }
 
 .loginContainer input,
 button {
-  width: 200px;
+  width: 80%;
   height: 50px;
   border-radius: 8px;
   border: none;
   margin: 10px;
+  font-size: 25px;
 }
 
 .loginContainer button {

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
-
+import logo from "../logos/icon-above-font.svg";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -27,24 +27,32 @@ function Login() {
       }
     });
   };
-  return (
-    <div className="loginContainer">
-      <label>Username:</label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setUsername(event.target.value);
-        }}
-      />
-      <label>Password:</label>
-      <input
-        type="password"
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
 
-      <button onClick={login}> Login </button>
+  return (
+    <div className="flex">
+      <div className="loginContainer">
+        <img className="fond" src={logo} />
+
+        <label>Username:</label>
+        <input
+          type="text"
+          onChange={(event) => {
+            setUsername(event.target.value);
+          }}
+        />
+        <label>Password:</label>
+        <input
+          type="password"
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
+
+        <button className="boutlog" onClick={login}>
+          {" "}
+          Login{" "}
+        </button>
+      </div>{" "}
     </div>
   );
 }

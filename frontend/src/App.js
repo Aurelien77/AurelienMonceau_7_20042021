@@ -69,7 +69,7 @@ function App() {
               <div>
                 Bienvenue <b>sur le réseau social de Groupomania</b> vous avez à
                 votre disposition les posts de vos collègues afin de partager de
-                bons moments, et n'oubliez pas, RESTEZ POSITIF !
+                bons moments, et n'oubliez pas, RESTEZ POSITIF !{" "}
               </div>
             </div>
 
