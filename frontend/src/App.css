@@ -1,4 +1,10 @@
 /* ---------------------------- */
+/* .global {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: black;
+} */
 
 .logo {
   height: 10%;
@@ -14,6 +20,7 @@
   width: 50%;
   max-width: 30em; /* A ADAPTER */
   font-size: 25px;
+  display: flex;
 }
 .marquee-rtl > div {
   display: inline-block; /* important */
@@ -21,6 +28,7 @@
   animation: defilement-rtl 35s infinite linear; /* défilement */
   cursor: pointer;
   padding: 10px 2em 10px 100%;
+  display: flex;
 }
 .marquee-rtl:hover > div {
   animation-play-state: paused; /* met en pause le défilement */
@@ -64,20 +72,21 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  /*  background-size: cover;
+
+  background-size: cover;
   background-image: url(./logos/ville.jpg);
   background-position: center bottom, left top;
-  background-repeat: no-repeat; */
-
-  background-image: url(./logos/icon.svg);
-  background-position: center bottom;
-  background-size: 40%;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
 }
 
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  background-image: url(./logos/formes.gif);
+  background-repeat: repeat;
+  background-size: cover;
+  background-color: rgb(15, 2, 61);
 }
 .containerpost {
   display: flex;
@@ -95,6 +104,7 @@ body {
   background-color: aliceblue;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 15px;
+  background-image: url(./logos/icon.svg);
 }
 
 .post:hover {
@@ -161,7 +171,7 @@ body {
   justify-content: center;
   align-items: center;
   background-size: cover;
-  background: no-repeat, url(./logos/orig.gif);
+  background: repeat, url(./logos/orig.gif);
 
   /*      url("https://64.media.tumblr.com/504b77b22396ca06b425e6834a2ad702/81904407f068f9c7-19/s1920x1080/0c0b12cdeb348d6c161b44d93f7d44a921b28b11.gif");  */
 }
@@ -275,6 +285,7 @@ a {
   margin-right: 10px;
   color: rgb(12, 12, 12);
   font-weight: lighter;
+
   /*  background-color: rgb(80, 4, 221); */
 }
 
@@ -285,7 +296,7 @@ a {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background: no-repeat, url(./logos/orig.gif);
+  background: repeat, url(./logos/orig.gif);
 }
 
 .leftSide {
@@ -382,7 +393,7 @@ button {
   background-size: cover;
   background: no-repeat, url(./logos/orig.gif);
   box-shadow: 1px 1px silver, -0.5em 0 0.4em black;
-
+  display: flex;
   font-size: 150%;
 }
 
