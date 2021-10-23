@@ -22,8 +22,11 @@ function CreatePost() {
   }, []);
   const validationSchema = Yup.object().shape({
     title: Yup.string().required("Vous devez entrer un titre"),
-    postText: Yup.string().required("Vous devez entrer du texte"),
-    lien: Yup.string().required("Vous pouvez poster sans insérer de lien"),
+    postText: Yup.string()
+      .min(3)
+      .max(1600000)
+      .required("Vous devez entrer du texte"),
+    lien: Yup.string().notRequired("Vous pouvez poster sans insérer de lien"),
   });
 
   const onSubmit = (data) => {

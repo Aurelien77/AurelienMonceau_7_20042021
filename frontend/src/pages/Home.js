@@ -85,7 +85,11 @@ function Home() {
             </Link>
             <div className="footer">
               <div className="username">
-                <Link to={`/profile/${value.UserId}`}> {value.username} </Link>
+                {" "}
+                <Link to={`/profile/${value.UserId}`}>
+                  {" "}
+                  créé par {value.username} le : {value.createdAt}
+                </Link>
               </div>
               <div className="buttons">
                 <ThumbUpAltIcon

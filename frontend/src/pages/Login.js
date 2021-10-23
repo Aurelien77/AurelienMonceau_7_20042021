@@ -29,7 +29,7 @@ function Login() {
   };
 
   return (
-    <div className="flex">
+    <div className="flex background">
       <div className="loginContainer">
         <img className="fond" src={logo} />
 

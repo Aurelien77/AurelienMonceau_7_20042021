@@ -25,15 +25,39 @@ function Profile() {
       <div className="basicInfo">
         {" "}
         <h1> Page de profil de : {username} </h1>
-        {authState.username === username && (
-          <button
-            onClick={() => {
-              history.push("/changepassword");
-            }}
-          >
-            {" "}
-            Changer mon mots de passe
-          </button>
+        {(authState.username === username || authState.admin == true) && (
+          <>
+            <button
+              onClick={() => {
+                history.push("/changepassword");
+              }}
+            >
+              {" "}
+              Changer mon mots de passe
+            </button>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <input
+                  type="file"
+                  name="file"
+                  id="input-files"
+                  class="form-control-file border"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Soumêtre
+              </button>
+            </form>
+
+            <button
+              onClick={() => {
+                history.push("/changepassword");
+              }}
+            >
+              {" "}
+              Supprimer le compte
+            </button>
+          </>
         )}
       </div>
       <div className="listOfPosts">
