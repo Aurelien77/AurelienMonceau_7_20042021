@@ -17,7 +17,9 @@
   background-repeat: repeat;
   display: flex;
 }
-
+.primary {
+  font-size: 25px;
+}
 .logo {
   height: 10%;
   width: 100%;
@@ -303,10 +305,18 @@ span {
   align-items: center;
 }
 .navbar .loggedInContainer {
-  flex: 50%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  color: black;
+}
+
+.navbar .loggedInContainer2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   color: black;
 }
@@ -323,11 +333,13 @@ a {
   margin-right: 10px;
   background-color: white;
 }
-
+h1 {
+  color: rgb(245, 238, 238);
+}
 .navbar h1 {
   text-align: right;
 
-  color: rgb(12, 12, 12);
+  color: rgb(245, 238, 238);
   font-weight: lighter;
 
   /*  background-color: rgb(80, 4, 221); */
@@ -442,6 +454,22 @@ button {
   font-size: 150%;
 }
 
+.loginContainer2 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 40%;
+  height: 60%;
+  padding-top: 100px;
+  border-radius: 80px;
+  margin-top: 50px;
+  background-size: cover;
+  background: no-repeat, url(./logos/orig.gif);
+  box-shadow: 1px 1px silver, -0.5em 0 0.4em black;
+  display: flex;
+  font-size: 150%;
+}
+
 .loginContainer input,
 button {
   width: 80%;
@@ -450,6 +478,20 @@ button {
   border: none;
   margin: 10px;
   font-size: 25px;
+}
+
+.loginContainer2 input,
+button {
+  width: 90%;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .loginContainer button {

@@ -52,36 +52,32 @@ function App() {
     <div className="App">
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
-          <div className="loggedInContainer">
+          <div className="loggedInContainer2">
             <h1>
-              <Link to={`/profile/${authState.id}`}>
-                {" "}
-                {authState.username}{" "}
-              </Link>
+              <Link to={`/profile/${authState.id}`}> {authState.username}</Link>
             </h1>
             {authState.status && <button onClick={logout}> Déconnexion</button>}
-          </div>
-          <div className="menu">
-            {" "}
             <div className="primary">
+              {authState.status && <Link to="/createpost"> créer un Post</Link>}
+            </div>
+            <div className="primary">
+              {authState.status && <Link to="/"> Fils d'actualités</Link>}
+            </div>
+            <div className="menu">
               {" "}
-              <Link to="/"> Page d'accueil</Link>{" "}
-            </div>
-            <div className="primary">
-              <Link to="/createpost"> créer un Post</Link>{" "}
-            </div>
-            {!authState.status && (
-              <>
-                <div className="primary">
-                  {" "}
-                  <Link to="/login"> Se connecter</Link>{" "}
-                </div>
-                <div className="primary">
-                  {" "}
-                  <Link to="/registration"> S'enregistrer</Link>{" "}
-                </div>
-              </>
-            )}
+              {!authState.status && (
+                <>
+                  <div className="primary">
+                    {" "}
+                    <Link to="/login"> Se connecter</Link>{" "}
+                  </div>
+                  <div className="primary">
+                    {" "}
+                    <Link to="/registration"> S'enregistrer</Link>{" "}
+                  </div>
+                </>
+              )}
+            </div>{" "}
           </div>{" "}
           <Switch>
             <Route path="/" exact component={Home} />
