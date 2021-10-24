@@ -13,7 +13,10 @@ function Registration() {
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
     password: Yup.string().min(4).max(20).required(),
-    email: Yup.string().min(4).max(30).required(),
+    email: Yup.string()
+      .email("L'email doit être valid")
+      .max(255)
+      .required("L'email est requis"),
   });
 
   const onSubmit = (data) => {
@@ -39,7 +42,6 @@ function Registration() {
             name="username"
             placeholder="(Ex. John123...)"
           />
-
           <label>Password: </label>
           <ErrorMessage name="password" component="span" />
           <Field
@@ -50,7 +52,6 @@ function Registration() {
             name="password"
             placeholder="Your Password..."
           />
-
           <label>email: </label>
           <ErrorMessage name="email" component="span" />
           <Field
@@ -60,7 +61,6 @@ function Registration() {
             name="email"
             placeholder="(Ex. John@groupomania.com...)"
           />
-
           <button type="submit"> Enregistrer</button>
         </Form>
       </Formik>

@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     lien: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     username: {
       type: DataTypes.STRING,

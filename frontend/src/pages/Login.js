@@ -52,7 +52,7 @@ function Login() {
           {" "}
           Login{" "}
         </button>
-      </div>{" "}
+      </div>
     </div>
   );
 }

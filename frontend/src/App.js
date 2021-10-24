@@ -52,39 +52,37 @@ function App() {
     <div className="App">
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
-          <div className="navbar">
-            <div className="links">
-              <Link to="/"> Page d'accueil</Link>
-              <Link to="/createpost"> créer un Post</Link>
-
-              {!authState.status && (
-                <>
-                  <Link to="/login"> Se connecter</Link>
-                  <Link to="/registration"> S'enregistrer</Link>
-                </>
-              )}
-            </div>
-
-            <div class="marquee-rtl">
-              <div>
-                Bienvenue <b>sur le réseau social de Groupomania</b> vous avez à
-                votre disposition les posts de vos collègues afin de partager de
-                bons moments, et n'oubliez pas, RESTEZ POSITIF !{" "}
-              </div>
-            </div>
-
-            <div className="loggedInContainer">
-              <h1>
-                <Link to={`/profile/${authState.id}`}>
-                  {" "}
-                  {authState.username}{" "}
-                </Link>
-              </h1>
-              {authState.status && (
-                <button onClick={logout}> Déconnexion</button>
-              )}
-            </div>
+          <div className="loggedInContainer">
+            <h1>
+              <Link to={`/profile/${authState.id}`}>
+                {" "}
+                {authState.username}{" "}
+              </Link>
+            </h1>
+            {authState.status && <button onClick={logout}> Déconnexion</button>}
           </div>
+          <div className="menu">
+            {" "}
+            <div className="primary">
+              {" "}
+              <Link to="/"> Page d'accueil</Link>{" "}
+            </div>
+            <div className="primary">
+              <Link to="/createpost"> créer un Post</Link>{" "}
+            </div>
+            {!authState.status && (
+              <>
+                <div className="primary">
+                  {" "}
+                  <Link to="/login"> Se connecter</Link>{" "}
+                </div>
+                <div className="primary">
+                  {" "}
+                  <Link to="/registration"> S'enregistrer</Link>{" "}
+                </div>
+              </>
+            )}
+          </div>{" "}
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/createpost" exact component={CreatePost} />
