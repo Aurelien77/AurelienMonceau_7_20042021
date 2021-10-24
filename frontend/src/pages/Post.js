@@ -167,7 +167,8 @@ function Post() {
                 {comment.commentBody}
 
                 <label> Posté par {comment.username}</label>
-                {authState.username === comment.username && (
+                {(authState.username === comment.username ||
+                  authState.admin == true) && (
                   <button
                     onClick={() => {
                       deleteComment(comment.id);
