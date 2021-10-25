@@ -38,7 +38,7 @@ function Profile() {
                   Changer mon mots de passe
                 </button>
                 <form
-                  action="/upload"
+                  action="/uploadimg"
                   method="POST"
                   enctype="multipart/form-data"
                 >

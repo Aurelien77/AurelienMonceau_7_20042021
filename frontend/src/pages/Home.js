@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import { AuthContext } from "../helpers/AuthContext";
-
+import ReactTinyLink from "react";
 function Home() {
   const [listOfPosts, setListOfPosts] = useState([]);
   const [likedPosts, setLikedPosts] = useState([]);
@@ -23,6 +23,7 @@ function Home() {
           setListOfPosts(response.data.listOfPosts);
           setLikedPosts(
             response.data.likedPosts.map((like) => {
+              //Map argument de tableau
               return like.PostId;
             })
           );
@@ -40,6 +41,7 @@ function Home() {
       .then((response) => {
         setListOfPosts(
           listOfPosts.map((post) => {
+            //Map argument de tableau
             if (post.id === postId) {
               if (response.data.liked) {
                 return { ...post, Likes: [...post.Likes, 0] };
@@ -69,6 +71,7 @@ function Home() {
   return (
     <div className="containerpost">
       {listOfPosts.map((value, key) => {
+        //Map argument de tableau
         return (
           <div key={key} className="post">
             <div className="title"> {value.title} </div>
@@ -81,20 +84,20 @@ function Home() {
               {value.postText}
             </div>
 
-            <div
-              onClick={() => {
-                history.push(`+= "?id=" + ${value.lien}`);
-              }}
-            >
-              {value.lien}
+            <div className="lien">
+              <a target="blank" href={value.lien}>
+                {value.lien}
+              </a>
             </div>
 
-            {/* 
- this.props.history.Push(`/customers/${customer.id}`);
-            <Link className="lien" target="_blank" to={value.lien}>
-              {value.lien}
-            </Link>
- */}
+            {/*          <ReactTinyLink
+              cardSize="small"
+              showGraphic={true}
+              maxLine={2}
+              minLine={1}
+              url="{value.lien}"
+            /> */}
+
             <div className="footer">
               <div className="username">
                 {" "}

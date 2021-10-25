@@ -162,6 +162,7 @@ function Post() {
         </div>
         <div className="listOfComments">
           {comments.map((comment, key) => {
+            //Map argument de tableau
             return (
               <div key={key} className="comment">
                 {comment.commentBody}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import { Redirect } from "react-router";
 function ChangePassword() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -22,6 +22,9 @@ function ChangePassword() {
       .then((response) => {
         if (response.data.error) {
           alert(response.data.error);
+        } else {
+          alert("Mots de passe modifié");
+          /*     <Redirect to="/login" />; */
         }
       });
   };

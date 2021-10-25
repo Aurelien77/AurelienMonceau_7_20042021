@@ -1,9 +1,9 @@
 const fs = require("fs");
-
+const uploadController = require("../controllers/upload");
 const db = require("../models");
 const Image = db.images;
 
-const uploadFiles = async (req, res) => {
+exports.uploadFiles = async (req, res) => {
   try {
     console.log(req.file);
 
@@ -31,6 +31,6 @@ const uploadFiles = async (req, res) => {
   }
 };
 
-module.exports = {
+/* module.exports = {
   uploadFiles,
-};
+}; */

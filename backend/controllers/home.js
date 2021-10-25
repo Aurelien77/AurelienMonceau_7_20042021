@@ -1,9 +1,10 @@
 const path = require("path");
 
-const home = (req, res) => {
-  return res.sendFile(path.join(`${__dirname}/upload`));
+exports.getHome = (req, res) => {
+  return res.sendFile(path.join(`${__dirname}../index.js`));
 };
 
-module.exports = {
+/* module.exports = {
   getHome: home,
 };
+ */

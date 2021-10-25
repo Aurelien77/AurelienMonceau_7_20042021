@@ -35,7 +35,7 @@
   width: 100%;
   margin-top: 100%;
 }
-.lien {
+.lien a {
   color: black;
 }
 /* Défilement de droite à gauche */
@@ -101,9 +101,10 @@
   width: 100%;
   align-content: center;
   flex-direction: row;
-  gap: 4%;
+  align-content: center;
   justify-content: center;
   background-color: #0a0a0a;
+
   padding-top: 1%;
 }
 
