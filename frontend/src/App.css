@@ -6,6 +6,7 @@
   background-color: black;
 }
  */
+
 .containerglobal {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -19,6 +20,15 @@
 }
 .primary {
   font-size: 25px;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.deco button {
+  width: 100%;
 }
 .logo {
   height: 10%;
@@ -52,6 +62,10 @@
   color: #122441;
   font-size: 35px;
 }
+
+.form-control-file {
+  color: rgb(253, 252, 252);
+}
 @keyframes defilement-rtl {
   0% {
     -webkit-transform: translate(0);
@@ -69,6 +83,30 @@
 
   justify-content: center;
 }
+
+.flex2 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+  background-size: cover;
+  /*  background-image: url(./logos/orig.gif); */
+  background-repeat: repeat;
+}
+
+.flex3 {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  flex-direction: row;
+  gap: 4%;
+  justify-content: center;
+  background-color: #0a0a0a;
+  padding-top: 1%;
+}
+
 .fond {
   margin-top: -85px;
   margin-bottom: 10px;
@@ -94,9 +132,35 @@
   align-items: center;
   flex-direction: column;
 }
+
+.App2 {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 150px;
+  background-repeat: repeat;
+}
+
+.flexglobal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 50px;
+}
 body {
   margin: 0;
   padding: 0;
+  background-size: cover;
+  background-image: url(./logos/formes.gif);
 
   /*   background-image: url(./logos/formes.gif); */
   background-repeat: repeat;
@@ -107,10 +171,11 @@ body {
   display: flex;
   flex-direction: column-reverse;
   /*  background-size: cover; */
+  /*   background-image: url(./logos/formes.gif); */
   background-image: url(./logos/formes.gif);
   background-position: center bottom, left top;
   background-repeat: repeat;
-  width: 80%;
+  width: 100%;
   align-items: center;
   background-size: 55%;
 }
@@ -307,9 +372,24 @@ span {
 .navbar .loggedInContainer {
   height: 100%;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
   align-items: center;
   color: black;
+}
+.basicinfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.basicinfo2 {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+}
+
+.basicinfo2 {
+  color: white;
 }
 
 .navbar .loggedInContainer2 {
@@ -334,6 +414,11 @@ a {
   background-color: white;
 }
 h1 {
+  color: rgb(245, 238, 238);
+  margin-bottom: 40px;
+  margin-right: 40px;
+}
+h3 {
   color: rgb(245, 238, 238);
 }
 .navbar h1 {
@@ -403,6 +488,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(./logos/icon.svg);
 }
 
 .listOfComments .comment {
@@ -417,6 +503,7 @@ button {
   justify-content: space-around;
   align-items: center;
   font-size: 25px;
+  /* background-image: url(./logos/formes.gif); */
 }
 
 #individual {
@@ -458,16 +545,14 @@ button {
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 40%;
+  width: 100%;
   height: 60%;
-  padding-top: 100px;
+
   border-radius: 80px;
-  margin-top: 50px;
+
   background-size: cover;
   background: no-repeat, url(./logos/orig.gif);
   box-shadow: 1px 1px silver, -0.5em 0 0.4em black;
-  display: flex;
-  font-size: 150%;
 }
 
 .loginContainer input,
@@ -482,11 +567,11 @@ button {
 
 .loginContainer2 input,
 button {
-  width: 90%;
+  width: 100%;
   height: 50px;
   border-radius: 8px;
-  border: none;
-  margin: 10px;
+  border: #d1515a;
+
   font-size: 25px;
   display: flex;
   flex-direction: row;
@@ -503,7 +588,7 @@ button {
   border: 2px solid dodgerblue;
 }
 
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-device-width: 800px) {
   .menu {
     font-size: 25px;
     display: flex;
@@ -514,6 +599,74 @@ button {
 
     word-wrap: normal;
     align-content: center;
+    align-items: center;
+  }
+
+  /*  .flex2 {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+  } */
+
+  .flex3 {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+  }
+
+  .loginContainer2 input,
+  button {
+    width: 60%;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .basicinfo3 .form {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .app3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    background-repeat: repeat;
+    flex-direction: column;
+  }
+  .listOfPost {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .containerpost {
+    display: flex;
+    flex-direction: column-reverse;
+    /*  background-size: cover; */
+    /*   background-image: url(./logos/formes.gif); */
+    background-image: url(./logos/formes.gif);
+    background-position: center bottom, left top;
+    background-repeat: repeat;
+    width: 100%;
     align-items: center;
   }
   /* Styles */

@@ -49,16 +49,20 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App2">
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
-          <div className="loggedInContainer2">
+          <div className="flex3">
             <h1>
               <Link to={`/profile/${authState.id}`}> {authState.username}</Link>
-            </h1>
-            {authState.status && <button onClick={logout}> Déconnexion</button>}
+            </h1>{" "}
+            <div className="deco">
+              {authState.status && (
+                <button onClick={logout}> Déconnexion</button>
+              )}{" "}
+            </div>
             <div className="primary">
-              {authState.status && <Link to="/createpost"> créer un Post</Link>}
+              {authState.status && <Link to="/createpost"> Créer un Post</Link>}
             </div>
             <div className="primary">
               {authState.status && <Link to="/"> Fils d'actualités</Link>}

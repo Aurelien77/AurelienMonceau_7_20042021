@@ -80,9 +80,21 @@ function Home() {
             >
               {value.postText}
             </div>
+
+            <div
+              onClick={() => {
+                history.push(`+= "?id=" + ${value.lien}`);
+              }}
+            >
+              {value.lien}
+            </div>
+
+            {/* 
+ this.props.history.Push(`/customers/${customer.id}`);
             <Link className="lien" target="_blank" to={value.lien}>
               {value.lien}
             </Link>
+ */}
             <div className="footer">
               <div className="username">
                 {" "}
@@ -100,7 +112,6 @@ function Home() {
                     likedPosts.includes(value.id) ? "unlikeBttn" : "likeBttn"
                   }
                 />
-
                 <label> {value.Likes.length}</label>
               </div>
             </div>

@@ -17,7 +17,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-
+  /* const Image = sequelize.define("image", {
+    type: {
+      type: DataTypes.STRING,
+    },
+    name: {
+      type: DataTypes.STRING,
+    },
+    data: {
+      type: DataTypes.BLOB("long"),
+    },
+  }); */
   Posts.associate = (models) => {
     //un poste à plusieurs commentaires et plusieurs likes
     Posts.hasMany(models.Comments, {
