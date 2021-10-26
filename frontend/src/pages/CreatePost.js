@@ -62,6 +62,8 @@ function CreatePost() {
             id="inputCreatePost"
             name="postText"
             placeholder="(Ex. Post...)"
+            min="10"
+            max="10000"
           />
 
           <label>Noter ici votre lien: </label>
