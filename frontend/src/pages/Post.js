@@ -129,7 +129,14 @@ function Post() {
             }}
           >
             {postObject.postText}
+
+            <div className="lien">
+              <a target="blank" href={postObject.lien}>
+                {postObject.lien}
+              </a>
+            </div>
           </div>
+
           <div className="footer">
             {postObject.username}
 
