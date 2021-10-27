@@ -130,11 +130,9 @@ function Post() {
           >
             {postObject.postText}
 
-            <div className="lien">
-              <a target="blank" href={postObject.lien}>
-                {postObject.lien}
-              </a>
-            </div>
+            <a target="blank" className="lien" href={postObject.lien}>
+              {postObject.lien}
+            </a>
           </div>
 
           <div className="footer">

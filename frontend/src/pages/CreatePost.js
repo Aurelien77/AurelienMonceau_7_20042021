@@ -58,14 +58,17 @@ function CreatePost() {
           <label>Post: </label>
           <ErrorMessage name="postText" component="span" />
           <Field
+            cols="45"
+            rows="8"
+            maxlength="65525"
+            component="textarea"
             autocomplete="off"
             id="inputCreatePost"
             name="postText"
             placeholder="(Ex. Post...)"
+            type="text"
             min="10"
-            max="10000"
-          />
-
+          />{" "}
           <label>Noter ici votre lien: </label>
           <ErrorMessage name="lien" component="span" />
           <Field
@@ -74,7 +77,6 @@ function CreatePost() {
             name="lien"
             placeholder="(Ex. htpp://monlien.com...)"
           />
-
           <button type="submit"> Créer un Post</button>
         </Form>
       </Formik>

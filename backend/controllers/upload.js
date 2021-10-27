@@ -1,7 +1,6 @@
 const fs = require("fs");
 const uploadController = require("../controllers/upload");
-const db = require("../models");
-const Image = db.images;
+const { Users } = require("../models");
 
 exports.uploadFiles = async (req, res) => {
   try {
@@ -11,18 +10,17 @@ exports.uploadFiles = async (req, res) => {
       return res.send(`You must select a file.`);
     }
 
-    Image.create({
-      type: req.file.mimetype,
-      name: req.file.originalname,
-      data: fs.readFileSync(
-        __basedir + "/resources/static/assets/uploads/" + req.file.filename
-      ),
-    }).then((image) => {
-      fs.writeFileSync(
-        __basedir + "/resources/static/assets/tmp/" + image.name,
-        image.data
-      );
+    const user = await Users.findOne({
+      where: { id: req.params.userId },
+    });
 
+    /* 	const ancien_fichier = __basedir + "/ressources/static/assets/uploads/" + user.photo_profil;
+	fs.unlinkSync(ancien_fichier); */
+
+    Users.update(
+      { photo_profil: req.file.filename },
+      { where: { id: req.params.userId } }
+    ).then(() => {
       return res.send(`File has been uploaded.`);
     });
   } catch (error) {

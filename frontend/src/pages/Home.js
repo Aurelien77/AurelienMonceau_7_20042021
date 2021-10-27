@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import { AuthContext } from "../helpers/AuthContext";
-import { ReactTinyLink } from "react-tiny-link";
+/* import { ReactTinyLink } from "react-tiny-link"; */
 
 function Home() {
   const [listOfPosts, setListOfPosts] = useState([]);
@@ -77,7 +77,7 @@ function Home() {
           <div key={key} className="post">
             <div className="title"> {value.title} </div>
             <div
-              className="body"
+              className="space"
               onClick={() => {
                 history.push(`/post/${value.id}`);
               }}
@@ -103,7 +103,7 @@ function Home() {
                 {" "}
                 <Link to={`/profile/${value.UserId}`}>
                   {" "}
-                  créé par {value.username} le : {value.createdAt}
+                  Créé par {value.username} le : {value.createdAt}
                 </Link>
               </div>
               <div className="buttons">

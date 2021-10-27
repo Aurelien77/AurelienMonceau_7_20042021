@@ -2,17 +2,21 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../helpers/AuthContext";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import LocalCafeIcon from "@material-ui/icons//LocalCafe";
 
 function Profile() {
   let { id } = useParams();
   let history = useHistory();
   const [username, setUsername] = useState("");
+  const [photo_profil, setphoto_profil] = useState("");
   const [listOfPosts, setListOfPosts] = useState([]);
   const { authState } = useContext(AuthContext);
 
   useEffect(() => {
     axios.get(`http://localhost:3001/auth/basicinfo/${id}`).then((response) => {
       setUsername(response.data.username);
+      setphoto_profil(response.data.photo_profil);
     });
 
     axios.get(`http://localhost:3001/posts/byuserId/${id}`).then((response) => {
@@ -27,6 +31,9 @@ function Profile() {
           <div className="basicinfo3">
             {" "}
             <h1> Page de profil de : {username} </h1>
+            <div className="profil">
+              <img src={"http://localhost:3001/images/" + photo_profil} />{" "}
+            </div>
             {(authState.username === username || authState.admin == true) && (
               <>
                 <button
@@ -38,7 +45,7 @@ function Profile() {
                   Changer mon mots de passe
                 </button>
                 <form
-                  action="/uploadimg"
+                  action={"http://localhost:3001/upload/" + id}
                   method="POST"
                   enctype="multipart/form-data"
                 >
@@ -68,6 +75,7 @@ function Profile() {
             )}
           </div>{" "}
         </div>
+
         <div className="listOfPosts">
           {listOfPosts.map((value, key) => {
             return (
@@ -81,9 +89,15 @@ function Profile() {
                 >
                   {value.postText}
                 </div>
+
                 <div className="footer">
                   <div className="username">{value.username}</div>
                   <div className="buttons">
+                    <div className="cofee">
+                      {" "}
+                      <LocalCafeIcon />
+                    </div>
+
                     <label> {value.Likes.length}</label>
                   </div>
                 </div>

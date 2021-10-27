@@ -38,6 +38,7 @@ function App() {
           setAuthState({
             username: response.data.username,
             id: response.data.id,
+			photo_profil: response.data.photo_profil,
             status: true,
           });
         }

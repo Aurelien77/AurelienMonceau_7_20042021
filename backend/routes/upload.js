@@ -8,6 +8,11 @@ const { validateToken } = require("../middlewares/AuthMiddleware");
 
 router.get("/", homeController.getHome);
 
+router.post("/:userId",
+  upload.single("file"),
+  uploadController.uploadFiles
+);
+
 router.post(
   "/upload",
 

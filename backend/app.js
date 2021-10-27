@@ -7,6 +7,8 @@ app.use(cors());
 
 const db = require("./models");
 
+global.__basedir = __dirname;
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
@@ -31,6 +33,8 @@ app.use("/likes", likesRouter);
 
 const imagesRouter = require("./routes/upload");
 app.use("/upload", imagesRouter);
+
+app.use("/images", express.static(__dirname+"/ressources/static/assets/uploads"));
 
 db.sequelize.sync().then(() => {
   app.listen(3001, () => {

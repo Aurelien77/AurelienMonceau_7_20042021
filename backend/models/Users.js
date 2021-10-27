@@ -21,6 +21,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValues: false,
     },
+
+    photo_profil: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValues: false,
+    },
   });
 
   Users.associate = (models) => {

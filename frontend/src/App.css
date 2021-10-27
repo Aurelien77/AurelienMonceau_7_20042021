@@ -4,12 +4,41 @@
   height: 100%;
   display: flex;
   background-color: black;
-}
- */
+} */
+
 body {
-  background-color: #122441;
+  background-color: black;
+  margin: 0px;
+  width: 100%;
 }
 
+.space {
+  margin-top: 2%;
+  white-space: pre-line;
+}
+.cofee {
+  color: #d1515a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+.profil {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  /* align-items: center; */
+}
+
+.profil img {
+  border-radius: 100px;
+  border: #d1515a solid 3px;
+  box-shadow: rgba(15, 15, 12, 2) 0px 2px 8px 0px;
+  width: 50%;
+  height: 50%;
+  /* align-items: center; */
+}
 .containerglobal {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -162,7 +191,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: repeat, url(./logos/orig.gif);
+  /*  background: repeat, url(./logos/orig.gif); */
 }
 
 .app3 {
@@ -172,6 +201,16 @@ body {
   align-items: center;
   gap: 150px;
   background-repeat: repeat;
+  background: repeat, url(./logos/orig.gif);
+}
+
+.App4 {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: repeat, url(./logos/orig.gif);
 }
 
 .flexglobal {
@@ -286,7 +325,12 @@ body {
   margin-right: 20px;
   margin-left: 10px;
 }
-
+.listOfPost {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
 /* création de post css */
 
 .createPostPage {
@@ -471,9 +515,13 @@ a {
   background-color: white;
 }
 h1 {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
   color: rgb(10, 10, 10);
-  margin-bottom: 40px;
-  margin-right: 40px;
+
+  font-size: 35px;
 }
 h3 {
   color: rgb(245, 238, 238);
@@ -531,7 +579,7 @@ button {
 .addCommentContainer button {
   background-color: dodgerblue;
   color: white;
-  width: 50%;
+  width: 100%;
 }
 
 .addCommentContainer input {
@@ -664,6 +712,19 @@ button {
 }
 
 @media only screen and (max-device-width: 800px) {
+  .postPage {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  body {
+    background-color: black;
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
   .menu {
     font-size: 25px;
     display: flex;
@@ -709,13 +770,33 @@ button {
     align-items: center;
     justify-content: center;
   }
+
+  .basicinfo3 {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 0px;
+    padding: 0px;
+  }
   .basicinfo3 .form {
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
+
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  .App2 {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   .app3 {
@@ -729,20 +810,100 @@ button {
   }
   .listOfPost {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
   }
 
   .containerpost {
     display: flex;
     flex-direction: column-reverse;
-    /*  background-size: cover; */
-    /*   background-image: url(./logos/formes.gif); */
-    background-image: url(./logos/formes.gif);
-    background-position: center bottom, left top;
+    background-size: cover;
+
     background-repeat: repeat;
-    width: 100%;
+    width: 80%;
+
     align-items: center;
   }
+
+  .lien {
+    display: flex;
+    color: #122441;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    text-align: justify;
+    white-space: normal;
+  }
+  .lien a {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    color: #122441;
+    margin: 2%;
+    align-items: center;
+    font-size: 20px;
+
+    white-space: normal;
+  }
+
+  .post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 30%;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+
+  .flex2 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    background-size: cover;
+    /*  background-image: url(./logos/orig.gif); */
+    background-repeat: repeat;
+  }
+
+  .flex3 {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    margin: 0px;
+    padding: 0px;
+  }
+  .createPostPage {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background: repeat, url(./logos/orig.gif);
+
+    /*      url("https://64.media.tumblr.com/504b77b22396ca06b425e6834a2ad702/81904407f068f9c7-19/s1920x1080/0c0b12cdeb348d6c161b44d93f7d44a921b28b11.gif");  */
+  }
+  .profil {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    /* align-items: center; */
+    width: 100%;
+    height: 100%;
+  }
+
   /* Styles */
 }
