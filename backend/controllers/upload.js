@@ -7,7 +7,7 @@ exports.uploadFiles = async (req, res) => {
     console.log(req.file);
 
     if (req.file == undefined) {
-      return res.send(`You must select a file.`);
+      return res.send(`vous devez choisir un fichier.`);
     }
 
     const user = await Users.findOne({
@@ -21,7 +21,7 @@ exports.uploadFiles = async (req, res) => {
       { photo_profil: req.file.filename },
       { where: { id: req.params.userId } }
     ).then(() => {
-      return res.send(`File has been uploaded.`);
+      return res.redirect("back");
     });
   } catch (error) {
     console.log(error);

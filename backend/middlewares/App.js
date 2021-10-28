@@ -55,6 +55,7 @@ function App() {
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
           <div className="flex3">
+            {authState.photo_profil}
             <h1>
               <Link to={`/profile/${authState.id}`}> {authState.username}</Link>
             </h1>{" "}
