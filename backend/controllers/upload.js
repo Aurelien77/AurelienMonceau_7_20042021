@@ -25,7 +25,7 @@ exports.uploadFiles = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    return res.send(`Error when trying upload images: ${error}`);
+    return res.send(`Erreur pedant la tentative d'upload de l'image: ${error}`);
   }
 };
 

@@ -58,7 +58,7 @@ function Post() {
       .then(() => {
         setComments(
           comments.filter((val) => {
-            return val.id != id;
+            return val.id !== id;
           })
         );
       });
@@ -139,7 +139,7 @@ function Post() {
             {postObject.username}
 
             {(authState.username === postObject.username ||
-              authState.admin == true) && (
+              authState.admin === true) && (
               <button
                 onClick={() => {
                   deletePost(postObject.id);
@@ -174,7 +174,7 @@ function Post() {
 
                 <label> Posté par {comment.username}</label>
                 {(authState.username === comment.username ||
-                  authState.admin == true) && (
+                  authState.admin === true) && (
                   <button
                     onClick={() => {
                       deleteComment(comment.id);

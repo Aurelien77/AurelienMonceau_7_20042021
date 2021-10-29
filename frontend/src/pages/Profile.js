@@ -32,9 +32,12 @@ function Profile() {
             {" "}
             <h1> Page de profil de : {username} </h1>
             <div className="profil">
-              <img src={"http://localhost:3001/images/" + photo_profil} />{" "}
+              <img
+                src={"http://localhost:3001/images/" + photo_profil}
+                alt="profil"
+              />{" "}
             </div>
-            {(authState.username === username || authState.admin == true) && (
+            {(authState.username === username || authState.admin === true) && (
               <>
                 <button
                   onClick={() => {

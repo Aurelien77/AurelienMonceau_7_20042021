@@ -20,6 +20,7 @@ function App() {
   const [authState, setAuthState] = useState({
     username: "",
     id: 0,
+    photo_profil: "",
     status: false,
   });
 
@@ -55,35 +56,44 @@ function App() {
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
           <div className="flex3">
-            <h1>
-              <Link to={`/profile/${authState.id}`}> {authState.username}</Link>
-            </h1>{" "}
+            <div className="usernameaccueil">
+              <h1>
+                <Link to={`/profile/${authState.id}`}>
+                  {" "}
+                  {authState.username}
+                </Link>
+              </h1>{" "}
+            </div>
             <div className="deco">
               {authState.status && (
                 <button onClick={logout}> Déconnexion</button>
               )}{" "}
-            </div>
-            <div className="primary">
-              {authState.status && <Link to="/createpost"> Créer un Post</Link>}
-            </div>
-            <div className="primary">
-              {authState.status && <Link to="/"> Fils d'actualités</Link>}
-            </div>
-            <div className="menu">
-              {" "}
-              {!authState.status && (
-                <>
-                  <div className="primary">
+            </div>{" "}
+            <div className="principal">
+              <div className="primary">
+                {authState.status && (
+                  <Link to="/createpost"> Créer un Post</Link>
+                )}
+              </div>
+              <div className="primary">
+                {authState.status && <Link to="/"> Fils d'actualités</Link>}
+              </div>{" "}
+            </div>{" "}
+            {!authState.status && (
+              <>
+                {" "}
+                <div className="alignmenuprinc">
+                  <div className="coenr">
                     {" "}
-                    <Link to="/login"> Se connecter</Link>{" "}
+                    <Link to="/login"> Connexion</Link>{" "}
                   </div>
-                  <div className="primary">
+                  <div className="coenr2">
                     {" "}
                     <Link to="/registration"> S'enregistrer</Link>{" "}
                   </div>
-                </>
-              )}
-            </div>{" "}
+                </div>{" "}
+              </>
+            )}
           </div>{" "}
           <Switch>
             <Route path="/" exact component={Home} />
