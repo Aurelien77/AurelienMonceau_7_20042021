@@ -2,6 +2,20 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../helpers/AuthContext";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+const validationSchema = Yup.object().shape({
+  commentaire: Yup.string().required("Vous devez entrer un titre"),
+  postText: Yup.string()
+    .min(8)
+    .max(60000)
+    .required("Vous devez entrer du texte"),
+  lien: Yup.string().notRequired("Vous pouvez poster sans insérer de lien"),
+});
+const initialValues = {
+  commentaire: "",
+};
 
 function Post() {
   let { id } = useParams();
@@ -90,7 +104,7 @@ function Post() {
 
       setPostObject({ ...postObject, title: newTitle });
     } else {
-      let newPostText = prompt("entrer un nouveau texte:");
+      let newPostText = prompt("Entrer un nouveau texte:");
       axios.put(
         "http://localhost:3001/posts/postText",
         {
@@ -129,10 +143,11 @@ function Post() {
             }}
           >
             {postObject.postText}
-
-            <a target="blank" className="lien" href={postObject.lien}>
-              {postObject.lien}
-            </a>
+            <div className="lien">
+              <a target="blank" className="lien" href={postObject.lien}>
+                {postObject.lien}
+              </a>
+            </div>
           </div>
 
           <div className="footer">
@@ -154,16 +169,34 @@ function Post() {
       </div>
       <div className="rightSide">
         <div className="addCommentContainer">
-          <input
-            type="text"
-            placeholder="Comment..."
-            autoComplete="off"
-            value={newComment}
-            onChange={(event) => {
-              setNewComment(event.target.value);
-            }}
-          />
-          <button onClick={addComment}> Ajouter un commentaire</button>
+          <Formik
+            initialValues={initialValues}
+            onClic={addComment}
+            validationSchema={validationSchema}
+          >
+            <Form className="formcommentaire" id="commentaire">
+              <label></label>
+              {/*    <ErrorMessage name="commentaire" component="span" /> */}
+
+              <Field
+                component="textarea"
+                rows="8"
+                cols="45"
+                autocomplete="off"
+                id="comment"
+                name="commentaire"
+                placeholder="(Ex. Très sympa !...)"
+                value={newComment}
+                onChange={(event) => {
+                  setNewComment(event.target.value);
+                }}
+              />
+              <button className="boutoncommentaire" onClick={addComment}>
+                {" "}
+                Ajouter un commentaire
+              </button>
+            </Form>
+          </Formik>
         </div>
         <div className="listOfComments">
           {comments.map((comment, key) => {

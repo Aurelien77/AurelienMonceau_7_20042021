@@ -92,9 +92,14 @@ function Profile() {
                 >
                   {value.postText}
                 </div>
-
+                <div className="lien">
+                  <a target="blank" href={value.lien}>
+                    {value.lien}
+                  </a>
+                </div>
                 <div className="footer">
                   <div className="username">{value.username}</div>
+
                   <div className="buttons">
                     <div className="cofee">
                       {" "}

@@ -14,9 +14,30 @@ body {
 .basicinfo3 {
   width: 100%;
   height: 100%;
+  padding-left: 10%;
   /*   background-size: cover;
   background: no-repeat, url(./logos/orig.gif); */
 }
+.formcommentaire {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: red;
+  white-space: normal;
+}
+
+.formcommentaire textarea {
+  border-radius: 25px;
+}
+
+.boutoncommentaire {
+  height: 50%;
+  width: 70%;
+  margin: 0px;
+  padding: 0px;
+}
+
 .space {
   padding: 2%;
   white-space: pre-line;
@@ -117,6 +138,7 @@ body {
   font-size: 20px;
   text-align: justify;
   white-space: normal;
+  overflow: hidden;
 }
 /* Défilement de droite à gauche */
 .marquee-rtl {
@@ -144,7 +166,7 @@ body {
 }
 
 .form-control-file {
-  color: black;
+  color: red;
 }
 @keyframes defilement-rtl {
   0% {
@@ -339,6 +361,7 @@ body {
   font-weight: 500;
   background-color: #f7fdfd;
   color: black;
+  white-space: pre-line;
 }
 
 .post .footer {
@@ -650,8 +673,9 @@ button {
   flex: 80%;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
+
   /*   background-image: url(./logos/icon.svg); */
 }
 
@@ -659,7 +683,7 @@ button {
   width: 100%;
   height: 100%;
   padding: 30px;
-
+  white-space: pre-line;
   border: 1px solid #d1515a;
   border-radius: 5px;
   margin-top: 20px;
@@ -773,6 +797,21 @@ button {
 }
 
 @media only screen and (max-device-width: 800px) {
+  .formcommentaire {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    color: red;
+  }
+
+  .boutoncommentaire {
+    height: 50%;
+    width: 70%;
+    margin: 0px;
+    padding: 0px;
+  }
+
   .postPage {
     display: flex;
     width: 100%;
@@ -842,7 +881,6 @@ button {
     width: 100%;
     height: 100%;
     margin: 0px;
-    padding: 0px;
   }
   .basicinfo3 .form {
     display: flex;
@@ -896,8 +934,6 @@ button {
     margin-top: 2%;
     margin-bottom: 2%;
     width: 100%;
-    text-align: justify;
-    white-space: normal;
   }
   .lien a {
     width: 100%;
@@ -905,21 +941,19 @@ button {
     display: flex;
     flex-direction: column;
     color: #122441;
-    margin: 2%;
+    /*   margin: 2%; */
     align-items: center;
     font-size: 20px;
-
-    white-space: normal;
   }
 
   .post {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
     width: 100%;
     height: 30%;
-    margin-top: 20px;
     flex-direction: column;
   }
 

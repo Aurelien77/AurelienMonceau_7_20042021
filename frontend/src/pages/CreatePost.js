@@ -23,8 +23,8 @@ function CreatePost() {
   const validationSchema = Yup.object().shape({
     title: Yup.string().required("Vous devez entrer un titre"),
     postText: Yup.string()
-      .min(3)
-      .max(1600000)
+      .min(8)
+      .max(60000)
       .required("Vous devez entrer du texte"),
     lien: Yup.string().notRequired("Vous pouvez poster sans insérer de lien"),
   });
@@ -60,14 +60,12 @@ function CreatePost() {
           <Field
             cols="45"
             rows="8"
-            maxlength="65525"
             component="textarea"
             autocomplete="off"
-            id="inputCreatePost"
+            id="postText"
             name="postText"
             placeholder="(Ex. Post...)"
             type="text"
-            min="10"
           />{" "}
           <label>Noter ici votre lien: </label>
           <ErrorMessage name="lien" component="span" />
