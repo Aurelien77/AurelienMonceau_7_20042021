@@ -16,6 +16,7 @@ import ChangePassword from "./pages/ChangePassword";
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import AccountCircleIcon from "@material-ui/icons//AccountCircle";
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -64,10 +65,14 @@ function App() {
               <h1>
                 <Link to={`/profile/${authState.id}`}>
                   {" "}
-                  {authState.username} {authState.email}
+                  {authState.username}
                 </Link>
               </h1>{" "}
-            </div>
+            </div>{" "}
+            {/*   <div className="accountprof">
+              {" "}
+              <AccountCircleIcon />
+            </div> */}
             <div className="deco">
               {authState.status && (
                 <button onClick={logout}> Déconnexion</button>
@@ -86,16 +91,14 @@ function App() {
             {!authState.status && (
               <>
                 {" "}
-                <div className="alignmenuprinc">
-                  <div className="coenr">
-                    {" "}
-                    <Link to="/login"> Connexion</Link>{" "}
-                  </div>
-                  <div className="coenr2">
-                    {" "}
-                    <Link to="/registration"> S'enregistrer</Link>{" "}
-                  </div>
-                </div>{" "}
+                <div className="coenr">
+                  {" "}
+                  <Link to="/login"> Connexion</Link>{" "}
+                </div>
+                <div className="coenr2">
+                  {" "}
+                  <Link to="/registration"> S'enregistrer</Link>{" "}
+                </div>
               </>
             )}
           </div>{" "}

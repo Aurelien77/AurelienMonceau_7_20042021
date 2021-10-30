@@ -26,6 +26,7 @@ function Login() {
           admin: response.data.admin, //tous ce qui est dans réponse concernant admin
         });
         history.push("/");
+        window.location.reload(false);
       }
     });
   };
@@ -42,13 +43,13 @@ function Login() {
             setemail(event.target.value);
           }}
         />
-        {/*    <label>Username:</label>
+
         <input
-          type="text"
+          type="hidden"
           onChange={(event) => {
             setUsername(event.target.value);
           }}
-        /> */}
+        />
         <label>Password:</label>
         <input
           type="password"

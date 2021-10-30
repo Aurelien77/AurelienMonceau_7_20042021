@@ -44,7 +44,7 @@ function Registration() {
       >
         <Form className="formContainerregistration">
           <label>Username: </label>
-          <ErrorMessage name="username" component="span" />
+          <ErrorMessage className="spanform" name="username" component="span" />
           <Field
             autocomplete="off"
             id="username"
@@ -53,23 +53,23 @@ function Registration() {
             placeholder="(Ex. John123...)"
           />
           <label>Password: </label>
-          <ErrorMessage name="password" component="span" />
+          <ErrorMessage className="spanform" name="password" component="span" />
           <Field
             autocomplete="off"
             type="password"
             id="password"
             className="inputCreatePost"
             name="password"
-            placeholder="Your Password..."
+            placeholder="Votre mots de passe..."
           />
           <label>email: </label>
-          <ErrorMessage name="email" component="span" />
+          <ErrorMessage className="spanform" name="email" component="span" />
           <Field
             autocomplete="off"
             id="email"
             className="inputCreatePost"
             name="email"
-            placeholder="(Ex. John@groupomania.com...)"
+            placeholder="(John@groupomania.com...)"
           />
           <button type="submit"> Enregistrer</button>
         </Form>
