@@ -23,23 +23,26 @@ function Registration() {
     axios
       .post("http://localhost:3001/auth", data)
 
-      .then(() => {
-        /*  console.log(data); */
-        alert("L'utilisateur à été créé !");
-      })
-      .catch((err) => {
-        alert("erreur : " + err);
-      });
+      .then(
+        /*    (Succes) => {
+          alert(Succes);
+        }, */
+
+        (error) => {
+          console.log(error.data);
+          alert(error.data.error);
+        }
+      );
   };
 
   return (
-    <div>
+    <div className="formContainerregistrationglobal">
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="formContainer">
+        <Form className="formContainerregistration">
           <label>Username: </label>
           <ErrorMessage name="username" component="span" />
           <Field

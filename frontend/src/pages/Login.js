@@ -5,13 +5,14 @@ import { AuthContext } from "../helpers/AuthContext";
 import logo from "../logos/icon-above-font.svg";
 function Login() {
   const [username, setUsername] = useState("");
+  const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const { setAuthState } = useContext(AuthContext);
 
   let history = useHistory();
 
   const login = () => {
-    const data = { username: username, password: password };
+    const data = { username: username, email: email, password: password };
     axios.post("http://localhost:3001/auth/login", data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
@@ -19,6 +20,7 @@ function Login() {
         localStorage.setItem("accessToken", response.data.token);
         setAuthState({
           username: response.data.username,
+          email: response.data.email,
           id: response.data.id,
           status: true,
           admin: response.data.admin, //tous ce qui est dans réponse concernant admin
@@ -33,13 +35,20 @@ function Login() {
       <div className="loginContainer">
         <img className="fond" src={logo} />
 
-        <label>Username:</label>
+        <label>Email:</label>
+        <input
+          type="text"
+          onChange={(event) => {
+            setemail(event.target.value);
+          }}
+        />
+        {/*    <label>Username:</label>
         <input
           type="text"
           onChange={(event) => {
             setUsername(event.target.value);
           }}
-        />
+        /> */}
         <label>Password:</label>
         <input
           type="password"

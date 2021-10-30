@@ -13,4 +13,8 @@ router.get("/basicinfo/:id", userCtrl.basicInfo);
 
 router.put("/changepassword", validateToken, userCtrl.changepassword);
 
+/* router.delete("/delete", userCtrl.delete); */
+
+/* router.put("/delete/:id", validateToken, userCtrl.delete); */
+
 module.exports = router;

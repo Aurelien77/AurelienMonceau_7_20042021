@@ -3,9 +3,9 @@ const { Users } = require("../models");
 const bcrypt = require("bcrypt");
 
 exports.login = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, username, password } = req.body;
 
-  const user = await Users.findOne({ where: { username: username } });
+  const user = await Users.findOne({ where: { email: email } });
 
   if (!user) res.json({ error: "L'utilisateur n'existe pas" });
 
@@ -19,6 +19,7 @@ exports.login = async (req, res) => {
     );
     res.json({
       token: accessToken,
+      email: email,
       username: username,
       id: user.id,
       admin: user.admin,
@@ -30,8 +31,15 @@ exports.auth = async (req, res) => {
   await res.json(req.user);
 };
 
-exports.signup = (req, res) => {
+exports.signup = async (req, res) => {
   const { username, password, email } = req.body;
+
+  const user = await Users.findOne({ where: { email: email } });
+
+  if (user)
+    /*   res.json({ error: "Cet email est déja utilisé par un autre compte" }); */
+    res.send({ error: "Cet email est déja utilisé par un autre compte " });
+
   bcrypt.hash(password, 10).then((hash) => {
     Users.create({
       username: username,
@@ -39,7 +47,7 @@ exports.signup = (req, res) => {
       email: email,
       admin: false,
     });
-    res.json("SUCCESS");
+    res.json({ error: "L'utilisateur à été créé" });
   });
 };
 

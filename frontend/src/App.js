@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
+/* import deleteUsers from "./pages/delete"; */
 
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
@@ -19,8 +20,10 @@ import axios from "axios";
 function App() {
   const [authState, setAuthState] = useState({
     username: "",
+    email: "",
     id: 0,
     photo_profil: "",
+
     status: false,
   });
 
@@ -40,6 +43,7 @@ function App() {
             username: response.data.username,
             id: response.data.id,
             photo_profil: response.data.photo_profil,
+            email: response.data.email,
             status: true,
           });
         }
@@ -48,7 +52,7 @@ function App() {
 
   const logout = () => {
     localStorage.removeItem("accessToken");
-    setAuthState({ username: "", id: 0, status: false });
+    setAuthState({ email: "", username: "", id: 0, status: false });
   };
 
   return (
@@ -60,7 +64,7 @@ function App() {
               <h1>
                 <Link to={`/profile/${authState.id}`}>
                   {" "}
-                  {authState.username}
+                  {authState.username} {authState.email}
                 </Link>
               </h1>{" "}
             </div>
@@ -103,6 +107,7 @@ function App() {
             <Route path="/login" exact component={Login} />
             <Route path="/profile/:id" exact component={Profile} />
             <Route path="/changepassword" exact component={ChangePassword} />
+            {/*  <Route path="/delete" exact component={deleteUsers} /> */}
             <Route path="*" exact component={PageNotFound} />
           </Switch>
         </Router>

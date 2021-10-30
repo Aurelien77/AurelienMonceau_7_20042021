@@ -68,7 +68,7 @@ function Profile() {
 
                 <button
                   onClick={() => {
-                    history.push("/changepassword");
+                    history.push("/delete/:id");
                   }}
                 >
                   {" "}

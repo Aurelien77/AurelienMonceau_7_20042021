@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
+const helmet = require("helmet");
 app.use(express.json());
 app.use(cors());
 
@@ -23,18 +23,21 @@ app.use((req, res, next) => {
 });
 // Routers
 const postRouter = require("./routes/Posts");
-app.use("/posts", postRouter);
+app.use("/posts", helmet(), postRouter);
 const commentsRouter = require("./routes/Comments");
-app.use("/comments", commentsRouter);
+app.use("/comments", helmet(), commentsRouter);
 const usersRouter = require("./routes/Users");
-app.use("/auth", usersRouter);
+app.use("/auth", helmet(), usersRouter);
 const likesRouter = require("./routes/Likes");
-app.use("/likes", likesRouter);
+app.use("/likes", helmet(), likesRouter);
 
 const imagesRouter = require("./routes/upload");
-app.use("/upload", imagesRouter);
+app.use("/upload", helmet(), imagesRouter);
 
-app.use("/images", express.static(__dirname+"/ressources/static/assets/uploads"));
+app.use(
+  "/images",
+  express.static(__dirname + "/ressources/static/assets/uploads")
+);
 
 db.sequelize.sync().then(() => {
   app.listen(3001, () => {
