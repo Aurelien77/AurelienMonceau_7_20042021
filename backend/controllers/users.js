@@ -79,3 +79,14 @@ exports.changepassword = async (req, res) => {
     });
   });
 };
+
+exports.delete = async (req, res) => {
+  const UsersId = req.params.id;
+  await Users.destroy({
+    where: {
+      id: UsersId,
+    },
+  });
+
+  res.json("Suppression du compte effectué");
+};

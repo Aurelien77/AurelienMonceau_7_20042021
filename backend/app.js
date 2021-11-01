@@ -34,6 +34,9 @@ app.use("/likes", helmet(), likesRouter);
 const imagesRouter = require("./routes/upload");
 app.use("/upload", helmet(), imagesRouter);
 
+const deleteRouter = require("./routes/Users");
+app.use("/delete", helmet(), deleteRouter);
+
 app.use(
   "/images",
   express.static(__dirname + "/ressources/static/assets/uploads")

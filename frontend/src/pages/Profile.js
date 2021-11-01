@@ -68,7 +68,7 @@ function Profile() {
 
                 <button
                   onClick={() => {
-                    history.push("/delete/:id");
+                    history.push("/delete");
                   }}
                 >
                   {" "}

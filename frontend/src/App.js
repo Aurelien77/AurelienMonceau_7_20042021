@@ -11,12 +11,11 @@ import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
-/* import deleteUsers from "./pages/delete"; */
+import Delete from "./pages/Delete";
 
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AccountCircleIcon from "@material-ui/icons//AccountCircle";
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -110,7 +109,7 @@ function App() {
             <Route path="/login" exact component={Login} />
             <Route path="/profile/:id" exact component={Profile} />
             <Route path="/changepassword" exact component={ChangePassword} />
-            {/*  <Route path="/delete" exact component={deleteUsers} /> */}
+            <Route path="/delete" exact component={Delete} />
             <Route path="*" exact component={PageNotFound} />
           </Switch>
         </Router>
