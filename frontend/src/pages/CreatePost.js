@@ -6,8 +6,6 @@ import { useHistory } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 
 function CreatePost() {
-  const { authState } = useContext(AuthContext);
-
   let history = useHistory();
   const initialValues = {
     title: "",

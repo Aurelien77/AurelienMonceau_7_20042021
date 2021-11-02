@@ -25,6 +25,18 @@ body {
   color: #d1515a;
   box-shadow: rgba(5, 25, 52, 2) 0px 2px 8px 0px;
 }
+.boutonmodif {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.modif {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
 
 .accountprof {
   display: flex;
@@ -199,6 +211,7 @@ body {
     transform: translate(-100%);
   }
 }
+
 .flex {
   display: flex;
   width: 100%;
@@ -232,6 +245,7 @@ body {
 .usernameaccueil {
   display: flex;
   margin-right: 20%;
+  flex-direction: row;
 }
 .menucoenr {
 }

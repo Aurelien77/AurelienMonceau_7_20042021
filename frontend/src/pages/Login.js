@@ -22,11 +22,11 @@ function Login() {
           username: response.data.username,
           email: response.data.email,
           id: response.data.id,
-          status: true,
           admin: response.data.admin, //tous ce qui est dans réponse concernant admin
+          status: true,
         });
         history.push("/");
-        window.location.reload(false);
+        /*   window.location.reload(false); */
       }
     });
   };
@@ -41,11 +41,13 @@ function Login() {
           type="text"
           onChange={(event) => {
             setemail(event.target.value);
+            setUsername("Bienvenue🏠");
           }}
         />
 
         <input
           type="hidden"
+          value="Mon Profil"
           onChange={(event) => {
             setUsername(event.target.value);
           }}

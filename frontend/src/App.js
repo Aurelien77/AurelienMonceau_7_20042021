@@ -49,7 +49,9 @@ function App() {
         }
       });
   }, []);
-
+  const mode = () => {
+    window.location.reload(false);
+  };
   const logout = () => {
     localStorage.removeItem("accessToken");
     setAuthState({ email: "", username: "", id: 0, status: false });
@@ -61,9 +63,14 @@ function App() {
         <Router>
           <div className="flex3">
             <div className="usernameaccueil">
+              {/*  <div className="modif">
+                {" "}
+                <span className="boutonmodif">
+                  {authState.status && <button onClick={mode}>📑</button>}{" "}
+                </span>{" "}
+              </div> */}
               <h1>
                 <Link to={`/profile/${authState.id}`}>
-                  {" "}
                   {authState.username}
                 </Link>
               </h1>{" "}

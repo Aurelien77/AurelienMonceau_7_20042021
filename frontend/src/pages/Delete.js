@@ -45,8 +45,10 @@ function Delete() {
 
       .then((response) => {
         localStorage.removeItem("accessToken");
-        history.push("/login");
+
         logout();
+        history.push("/login");
+        window.location.reload(false);
       });
   }, []);
 
