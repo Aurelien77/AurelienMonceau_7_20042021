@@ -26,7 +26,6 @@ function Login() {
           status: true,
         });
         history.push("/");
-        /*   window.location.reload(false); */
       }
     });
   };
@@ -34,7 +33,7 @@ function Login() {
   return (
     <div className="flex background">
       <div className="loginContainer">
-        <img className="fond" src={logo} />
+        <img className="fond" src={logo} alt="Logo" />
 
         <label>Email:</label>
         <input

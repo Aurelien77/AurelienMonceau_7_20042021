@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../helpers/AuthContext";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object().shape({
@@ -60,7 +60,6 @@ function Post() {
           };
           setComments([...comments, commentToAdd]);
           setNewComment("");
-          window.location.reload(false);
         }
       });
   };

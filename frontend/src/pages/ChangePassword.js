@@ -24,7 +24,6 @@ function ChangePassword() {
           alert(response.data.error);
         } else {
           alert("Mots de passe modifié");
-          /*     <Redirect to="/login" />; */
         }
       });
   };

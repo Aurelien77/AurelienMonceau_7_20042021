@@ -37,7 +37,6 @@ exports.signup = async (req, res) => {
   const user = await Users.findOne({ where: { email: email } });
 
   if (user)
-    /*   res.json({ error: "Cet email est déja utilisé par un autre compte" }); */
     res.send({ error: "Cet email est déja utilisé par un autre compte " });
 
   bcrypt.hash(password, 10).then((hash) => {

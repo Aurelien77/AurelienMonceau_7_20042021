@@ -14,9 +14,6 @@ exports.uploadFiles = async (req, res) => {
       where: { id: req.params.userId },
     });
 
-    /* 	const ancien_fichier = __basedir + "/ressources/static/assets/uploads/" + user.photo_profil;
-	fs.unlinkSync(ancien_fichier); */
-
     Users.update(
       { photo_profil: req.file.filename },
       { where: { id: req.params.userId } }
@@ -28,7 +25,3 @@ exports.uploadFiles = async (req, res) => {
     return res.send(`Erreur pedant la tentative d'upload de l'image: ${error}`);
   }
 };
-
-/* module.exports = {
-  uploadFiles,
-}; */

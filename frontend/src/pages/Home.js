@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 
-/* import { ReactTinyLink } from "react-tiny-link"; */
-
 function Home() {
   const [listOfPosts, setListOfPosts] = useState([]);
   const [likedPosts, setLikedPosts] = useState([]);
@@ -90,14 +88,7 @@ function Home() {
                 {value.lien}
               </a>
             </div>
-            {/*          <ReactTinyLink
-              cardSize="small"
-              showGraphic={true}
-              maxLine={2}
-              minLine={1}
-              url="https://giphy.com/clips/parksandrec-parks-and-recreation-rec-peacock-tv-rggCX0eH3BTz9N9cv5"
-            />
- */}
+
             <div className="footer">
               <div className="username">
                 {" "}

@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../helpers/AuthContext";
 
 function CreatePost() {
   let history = useHistory();
@@ -32,7 +31,7 @@ function CreatePost() {
       .post("http://localhost:3001/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
-      .then((response) => {
+      .then(() => {
         history.push("/");
       });
   };

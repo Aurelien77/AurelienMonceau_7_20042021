@@ -29,14 +29,14 @@ function Profile() {
 
   return (
     <div className="flexgobal">
+      <div className="modif">
+        {" "}
+        <span className="boutonmodif">
+          <button onClick={mode}>📑</button>
+        </span>
+      </div>
       <div className="app3">
         <div className="flex2">
-          <div className="modif">
-            {" "}
-            <span className="boutonmodif">
-              <button onClick={mode}>📑</button>
-            </span>
-          </div>
           <div className="basicinfo3">
             {" "}
             <h1> Page de profil de : {username} </h1>

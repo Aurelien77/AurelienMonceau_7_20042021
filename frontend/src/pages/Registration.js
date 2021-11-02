@@ -23,16 +23,10 @@ function Registration() {
     axios
       .post("http://localhost:3001/auth", data)
 
-      .then(
-        /*    (Succes) => {
-          alert(Succes);
-        }, */
-
-        (error) => {
-          console.log(error.data);
-          alert(error.data.error);
-        }
-      );
+      .then((error) => {
+        console.log(error.data);
+        alert(error.data.error);
+      });
   };
 
   return (
